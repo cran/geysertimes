@@ -329,14 +329,14 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">default_path &lt;-<span class="st"> </span><span class="kw">gt_get_data</span>()</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; Set dest_folder to geysertimes::gt_path() so that data persists between R sessions.</span></a></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">default_path</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="co">#&gt; [1] &quot;/tmp/Rtmp4WQxHs/geysertimes/2021-04-08&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">#&gt; [1] &quot;/tmp/RtmpUtc3wI/geysertimes/2021-05-06&quot;</span></a></code></pre></div>
 <p>Users are encouraged to set <code>dest_folder</code> to the value given by <code>gt_path()</code> which is a permanent location appropriate for the user on the particular platform.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">gt_path</span>()</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; [1] &quot;~/.local/share/geysertimes&quot;</span></a></code></pre></div>
 <p>If a permanent location is used, the user only needs to get the data once. Using the suggested value for <code>dest_folder</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">suggested_path &lt;-<span class="st"> </span><span class="kw">gt_get_data</span>(<span class="dt">dest_folder=</span><span class="kw">gt_path</span>())</a></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">suggested_path</a>
-<a class="sourceLine" id="cb6-2" title="2"><span class="co">#&gt; [1] &quot;/home/spk/.local/share/GeyserTimes/2021-01-04&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb6-2" title="2"><span class="co">#&gt; [1] &quot;~/.local/share/geysertimes/2021-05-06&quot;</span></a></code></pre></div>
 </div>
 <div id="load-the-data" class="section level2">
 <h2>Load the Data</h2>
@@ -345,7 +345,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <a class="sourceLine" id="cb7-2" title="2">geysers &lt;-<span class="st"> </span><span class="kw">gt_load_geysers</span>()</a></code></pre></div>
 <p>A quick look at the data:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">dim</span>(eruptions)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; [1] 1288791      25</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; [1] 1292133      25</span></a>
 <a class="sourceLine" id="cb8-3" title="3"><span class="kw">names</span>(eruptions)</a>
 <a class="sourceLine" id="cb8-4" title="4"><span class="co">#&gt;  [1] &quot;eruption_id&quot;         &quot;geyser&quot;              &quot;time&quot;               </span></a>
 <a class="sourceLine" id="cb8-5" title="5"><span class="co">#&gt;  [4] &quot;has_seconds&quot;         &quot;exact&quot;               &quot;near_start&quot;         </span></a>
@@ -361,9 +361,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>The data that is downloaded is versioned. The version id is the date when the data was downloaded.</p>
 <p>The <code>gt_version()</code> lists the latest version of the data that has been downloaded. Setting <code>all=TRUE</code> will list all versions of the data that have been downloaded.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">gt_version</span>()</a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="co">#&gt; [1] &quot;2021-04-08&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb9-2" title="2"><span class="co">#&gt; [1] &quot;2021-05-06&quot;</span></a></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">gt_version</span>(<span class="dt">all=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="co">#&gt; [1] &quot;2021-04-08&quot; &quot;2021-04-07&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co">#&gt; [1] &quot;2021-05-06&quot;</span></a></code></pre></div>
 </div>
 </div>
 <div id="simple-analysis" class="section level2">
@@ -374,27 +374,27 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <a class="sourceLine" id="cb11-3" title="3"><span class="co">#&gt; # A tibble: 450 x 2</span></a>
 <a class="sourceLine" id="cb11-4" title="4"><span class="co">#&gt;    geyser              N</span></a>
 <a class="sourceLine" id="cb11-5" title="5"><span class="co">#&gt;    &lt;chr&gt;           &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb11-6" title="6"><span class="co">#&gt;  1 Old Faithful   183757</span></a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="co">#&gt;  1 Old Faithful   184096</span></a>
 <a class="sourceLine" id="cb11-7" title="7"><span class="co">#&gt;  2 Plume          143792</span></a>
-<a class="sourceLine" id="cb11-8" title="8"><span class="co">#&gt;  3 Daisy           99543</span></a>
-<a class="sourceLine" id="cb11-9" title="9"><span class="co">#&gt;  4 Little Cub      96778</span></a>
-<a class="sourceLine" id="cb11-10" title="10"><span class="co">#&gt;  5 Lion            63278</span></a>
-<a class="sourceLine" id="cb11-11" title="11"><span class="co">#&gt;  6 Grand           41360</span></a>
-<a class="sourceLine" id="cb11-12" title="12"><span class="co">#&gt;  7 Aurum           35812</span></a>
-<a class="sourceLine" id="cb11-13" title="13"><span class="co">#&gt;  8 Oblong          34076</span></a>
-<a class="sourceLine" id="cb11-14" title="14"><span class="co">#&gt;  9 Fountain        27453</span></a>
-<a class="sourceLine" id="cb11-15" title="15"><span class="co">#&gt; 10 Spouter         26979</span></a>
-<a class="sourceLine" id="cb11-16" title="16"><span class="co">#&gt; 11 Riverside       26587</span></a>
-<a class="sourceLine" id="cb11-17" title="17"><span class="co">#&gt; 12 Castle          25726</span></a>
+<a class="sourceLine" id="cb11-8" title="8"><span class="co">#&gt;  3 Daisy           99807</span></a>
+<a class="sourceLine" id="cb11-9" title="9"><span class="co">#&gt;  4 Little Cub      96889</span></a>
+<a class="sourceLine" id="cb11-10" title="10"><span class="co">#&gt;  5 Lion            63418</span></a>
+<a class="sourceLine" id="cb11-11" title="11"><span class="co">#&gt;  6 Grand           41475</span></a>
+<a class="sourceLine" id="cb11-12" title="12"><span class="co">#&gt;  7 Aurum           35881</span></a>
+<a class="sourceLine" id="cb11-13" title="13"><span class="co">#&gt;  8 Oblong          34080</span></a>
+<a class="sourceLine" id="cb11-14" title="14"><span class="co">#&gt;  9 Fountain        27463</span></a>
+<a class="sourceLine" id="cb11-15" title="15"><span class="co">#&gt; 10 Spouter         26981</span></a>
+<a class="sourceLine" id="cb11-16" title="16"><span class="co">#&gt; 11 Riverside       26678</span></a>
+<a class="sourceLine" id="cb11-17" title="17"><span class="co">#&gt; 12 Castle          25787</span></a>
 <a class="sourceLine" id="cb11-18" title="18"><span class="co">#&gt; 13 Logbridge       23416</span></a>
 <a class="sourceLine" id="cb11-19" title="19"><span class="co">#&gt; 14 Plate           21594</span></a>
 <a class="sourceLine" id="cb11-20" title="20"><span class="co">#&gt; 15 Echinus         21330</span></a>
-<a class="sourceLine" id="cb11-21" title="21"><span class="co">#&gt; 16 Depression      20655</span></a>
-<a class="sourceLine" id="cb11-22" title="22"><span class="co">#&gt; 17 Great Fountain  18879</span></a>
-<a class="sourceLine" id="cb11-23" title="23"><span class="co">#&gt; 18 Turban          18844</span></a>
-<a class="sourceLine" id="cb11-24" title="24"><span class="co">#&gt; 19 Grotto          17501</span></a>
+<a class="sourceLine" id="cb11-21" title="21"><span class="co">#&gt; 16 Depression      20668</span></a>
+<a class="sourceLine" id="cb11-22" title="22"><span class="co">#&gt; 17 Turban          18885</span></a>
+<a class="sourceLine" id="cb11-23" title="23"><span class="co">#&gt; 18 Great Fountain  18880</span></a>
+<a class="sourceLine" id="cb11-24" title="24"><span class="co">#&gt; 19 Grotto          17533</span></a>
 <a class="sourceLine" id="cb11-25" title="25"><span class="co">#&gt; 20 Jet             16368</span></a>
-<a class="sourceLine" id="cb11-26" title="26"><span class="co">#&gt; # … with 430 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-26" title="26"><span class="co">#&gt; # ... with 430 more rows</span></a></code></pre></div>
 </div>
 </div>
 

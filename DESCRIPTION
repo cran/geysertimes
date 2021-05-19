@@ -1,7 +1,8 @@
 Package: geysertimes
 Title: Geyser Data from GeyserTimes.org
-Version: 0.1.6
-Imports: jsonlite, lubridate, rappdirs, readr, tools, utils
+Version: 0.1.8
+Depends: R (>= 4.0)
+Imports: jsonlite, lubridate, readr, tools, utils
 Suggests: curl, dplyr, knitr, rmarkdown
 Authors@R: 
     person(given = "Stephen",
@@ -16,8 +17,8 @@ URL: https://github.com/geysertimes/geysertimes-r-package
 BugReports: https://github.com/geysertimes/geysertimes-r-package/issues
 VignetteBuilder: knitr, rmarkdown
 NeedsCompilation: no
-Packaged: 2021-05-06 22:16:39 UTC; spk
+Packaged: 2021-05-19 01:57:00 UTC; spk
 Author: Stephen Kaluzny [aut, cre]
 Maintainer: Stephen Kaluzny <spkaluzny@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-05-07 12:40:02 UTC
+Date/Publication: 2021-05-19 04:30:02 UTC
